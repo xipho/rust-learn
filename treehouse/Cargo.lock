@@ -3,5 +3,5 @@
 version = 3
 
 [[package]]
-name = "rust_learn"
+name = "treehouse"
 version = "0.1.0"
