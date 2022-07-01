@@ -2,7 +2,7 @@ use bracket_lib::prelude::*;
 
 const SCREEN_WIDTH: i32 = 80;
 const SCREEN_HEIGHT: i32 = 50;
-const FRAME_DURATION: f32 = 35.0;
+const FRAME_DURATION: f32 = 30.0;
 const PLAYER_X: i32 = 5;
 
 fn main() -> BError {
