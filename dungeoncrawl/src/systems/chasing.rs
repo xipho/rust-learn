@@ -1,7 +1,5 @@
 use crate::prelude::*;
 
-use super::fov;
-
 #[system]
 #[read_component(Point)]
 #[read_component(ChasingPlayer)]
