@@ -2,3 +2,4 @@
 .idea
 examples/
 .DS_Store
+dungeoncrawl/.vscode/launch.json
