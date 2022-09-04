@@ -65,14 +65,13 @@ pub fn player_input(
                         }));
                 });
             if !hit_something {
-                did_something = true;
                 commands.push(((), WantsToMove {
                     entity: player_entity,
                     destination
                 }));
             }
         }
-        
+
         *turn_state = TurnState::PlayerTurn
     }
 }
@@ -80,7 +79,7 @@ pub fn player_input(
 fn use_item(n: usize, ecs: &mut SubWorld, commands: &mut CommandBuffer) -> Point {
     let player_entity = <(Entity, &Player)>::query()
         .iter(ecs)
-        .find_map(|(entity, player)| Some(*entity))
+        .find_map(|(entity, _player)| Some(*entity))
         .unwrap();
 
     let item_entity = <(Entity, &Item, &Carried)>::query()
