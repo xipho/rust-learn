@@ -1,6 +1,6 @@
 use crate::map_builder::automata::CellularAutomataArchitect;
 use crate::map_builder::drunkard::DrunkardsWalkArchitect;
-use crate::map_builder::prefab::apply_preafb;
+use crate::map_builder::prefab::apply_prefab;
 use crate::map_builder::rooms::RoomsArchitect;
 use crate::map_builder::themes::*;
 use crate::prelude::*;
@@ -33,6 +33,10 @@ pub struct MapBuilder {
     pub theme: Box<dyn MapTheme>
 }
 
+fn print_type_of<T>(_: &T) {
+    println!("{}", std::any::type_name::<T>())
+}
+
 impl MapBuilder {
 
     pub fn new(rng: &mut RandomNumberGenerator) -> Self {
@@ -41,8 +45,9 @@ impl MapBuilder {
             1 => Box::new(RoomsArchitect{}),
             _ => Box::new(CellularAutomataArchitect{})
         };
+        print_type_of(&architect);
         let mut mb = architect.new(rng);
-        apply_preafb(&mut mb, rng);
+        apply_prefab(&mut mb, rng);
         mb.theme = match rng.range(0, 2) {
             0 => DungeonTheme::new(),
             _ => ForestTheme::new()

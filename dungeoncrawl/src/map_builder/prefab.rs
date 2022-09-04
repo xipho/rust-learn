@@ -16,7 +16,7 @@ const FORTRESS: (&str, i32, i32) = ("
 ", 12, 11);
 
 
-pub fn apply_preafb(mb: &mut MapBuilder, rng: &mut RandomNumberGenerator) {
+pub fn apply_prefab(mb: &mut MapBuilder, rng: &mut RandomNumberGenerator) {
     let mut placement = None;
 
     let dijkstra_map = DijkstraMap::new(
