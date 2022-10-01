@@ -3,7 +3,6 @@ use serde::Deserialize;
 use ron::de::from_reader;
 use std::fs::File;
 use std::collections::HashSet;
-use std::thread::spawn;
 use legion::systems::CommandBuffer;
 
 #[derive(Clone, Deserialize, Debug)]
