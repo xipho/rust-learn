@@ -24,7 +24,7 @@ pub enum EntityType {
 
 #[derive(Clone, Deserialize, Debug)]
 pub struct Templates {
-    pub entities: Vec<Template>,
+    pub entities: Vec<Template>
 }
 
 
@@ -35,7 +35,7 @@ impl Templates {
     }
 
     pub fn spawn_entities(
-        &self, 
+        &self,
         ecs: &mut World,
         rng: &mut RandomNumberGenerator,
         level: usize,
